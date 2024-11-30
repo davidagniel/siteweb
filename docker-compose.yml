@@ -4,7 +4,7 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: db:3307
+      WORDPRESS_DB_HOST: dbwp:3307
       WORDPRESS_DB_USER: wordpressuser
       WORDPRESS_DB_PASSWORD: DArude19091985.
       WORDPRESS_DB_NAME: wp_database
