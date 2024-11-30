@@ -5,8 +5,8 @@ services:
       - "80:80"
     environment:
       WORDPRESS_DB_HOST: db:3307
-      WORDPRESS_DB_USER: wp_user
-      WORDPRESS_DB_PASSWORD: wp_password
+      WORDPRESS_DB_USER: wordpressuser
+      WORDPRESS_DB_PASSWORD: DArude19091985.
       WORDPRESS_DB_NAME: wp_database
     volumes:
       - wordpress_data:/var/www/html
