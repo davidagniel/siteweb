@@ -1,0 +1,43 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3307
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wp_password
+      WORDPRESS_DB_NAME: wp_database
+    volumes:
+      - wordpress_data:/var/www/html
+    depends_on:
+      - dbwp
+    restart: always
+
+  dbwp:
+    image: mariadb:latest
+    ports:
+      - "3307:3306"  # Redirige le port local 3307 vers le port 3306 dans le conteneur
+    environment:
+      MYSQL_ROOT_PASSWORD: 5jcDr5.6?qE7S*
+      MYSQL_DATABASE: wp_database
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: DArude19091985.
+    volumes:
+      - dbwp_data:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: dbwp
+     # MYSQL_ROOT_PASSWORD: root_password
+    depends_on:
+      - dbwp
+    restart: always
+
+volumes:
+  wordpress_data:
+  dbwp_data:
