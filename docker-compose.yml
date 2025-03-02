@@ -30,7 +30,7 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
-      - "8082:80"
+      - "8080:80"
     environment:
       PMA_HOST: dbwp
      # MYSQL_ROOT_PASSWORD: root_password
